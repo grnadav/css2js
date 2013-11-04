@@ -1,0 +1,16 @@
+{
+    "name": "css2js",
+    "version": "0.0.1",
+    "private": false,
+    "description": "Convert CSS to Javascript",
+    "repository": "git@github.com:grnadav/css2js.git",
+    "dependencies": {
+    },
+    "devDependencies": {
+    },
+    "engines": {
+        "node": ">=0.8.0"
+    },
+    "scripts": {
+    }
+}
