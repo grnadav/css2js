@@ -3,6 +3,7 @@
     "version": "0.0.1",
     "private": false,
     "description": "Convert CSS to Javascript",
+    "keywords": ["css", "js", "convert", "compile", "transpile"],
     "repository": "git@github.com:grnadav/css2js.git",
     "dependencies": {
         "line-reader": "0.2.3",
@@ -15,5 +16,16 @@
         "node": ">=0.8.0"
     },
     "scripts": {
-    }
+    },
+    "bugs": {
+        "url": "https://github.com/grnadav/css2js/issues"
+    },
+    "readmeFilename": "readme.markdown",
+    "license": "MIT/X11",
+    "author": {
+        "name": "Nadav Greenberg",
+        "email": "grnadav@gmail.com"
+    },
+    "main": "app.js"
+
 }
