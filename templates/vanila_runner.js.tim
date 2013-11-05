@@ -3,19 +3,4 @@
     var injectCssFn = {{ injectCssFn }};
 
     injectCssFn(cssContent);
-
-    // DEMO remove
-    DEMOel();
-
-
-
-    function DEMOel() {
-        setTimeout(function() {
-            var div = document.createElement('div');
-            div.setAttribute('class', 'hello');
-            document.body.appendChild(div);
-        }, 1000);
-
-    }
-
 })();

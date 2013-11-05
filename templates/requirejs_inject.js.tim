@@ -2,7 +2,9 @@ define([], function() {
     var cssContent = {{ cssContent }};
     var injectCssFn = {{ injectCssFn }};
 
-    injectCssFn(cssContent);
-
-    return {};
+    return {
+        inject: function() {
+            injectCssFn(cssContent);
+        }
+    };
 });
