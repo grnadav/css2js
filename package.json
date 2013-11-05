@@ -6,7 +6,8 @@
     "repository": "git@github.com:grnadav/css2js.git",
     "dependencies": {
         "line-reader": "0.2.3",
-        "tinytim": "0.1.0"
+        "tinytim": "0.1.0",
+        "optimist": "0.6.0"
     },
     "devDependencies": {
     },
