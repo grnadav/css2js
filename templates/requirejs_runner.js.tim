@@ -1,16 +1,11 @@
 define([], function() {
     var cssContent = {{ cssContent }};
-    injectCss(cssContent);
+    var injectCssFn = {{ injectCssFn }};
+
+    injectCssFn(cssContent);
 
     // DEMO remove
     DEMOel();
-
-    function injectCss(css) {
-        var headEl = document.getElementsByTagName('head')[0];
-        var styleEl = document.createElement('style');
-        styleEl.innerText = css;
-        headEl.appendChild(styleEl);
-    }
 
     function DEMOel() {
         setTimeout(function() {

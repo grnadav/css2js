@@ -2,8 +2,9 @@ var fs = require('fs');
 var lineReader = require('line-reader');
 var tinytim = require('tinytim');
 
-var cssFileUri = 'xxx.css';
+var cssFileUri = 'x.css';
 var outputFile = 'out.js';
+var template = 'vanila_runner';
 
 //var cssContent = fs.readFileSync(cssFileUri, {encoding: 'utf8'});
 var cssContent = '';
@@ -14,7 +15,8 @@ lineReader.eachLine(cssFileUri,function (line) {
         cssContent = cssContent.replace(/"/g,'\'');
         cssContent = '"' + cssContent + '"';
 
-        var res = tinytim.renderFile('templates/vanila_runner.js.tim', {cssContent: cssContent});
+        var injectCssFn = tinytim.renderFile('templates/css_injector.js.tim', {});
+        var res = tinytim.renderFile('templates/'+template+'.js.tim', {cssContent: cssContent, injectCssFn: injectCssFn});
 
         console.log(cssContent);
         console.log(res);

@@ -1,0 +1,6 @@
+(function (css) {
+    var headEl = document.getElementsByTagName('head')[0];
+    var styleEl = document.createElement('style');
+    styleEl.innerText = css;
+    headEl.appendChild(styleEl);
+})
