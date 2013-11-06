@@ -23,7 +23,7 @@ if (!fs.existsSync(templatePath)) {
 // read the input css and build the output js files
 var cssContent = fs.readFileSync(cssFileUri, {encoding: 'utf8'});
 cssContent = cssContent.replace(/\n/g," ");
-cssContent = cssContent.replace(/'/g,"\'");
+cssContent = cssContent.replace(/'/g,'\"');
 cssContent = "'" + cssContent + "'";
 
 // get the injection method so it is injectable to the other templates
