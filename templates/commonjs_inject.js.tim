@@ -1,0 +1,8 @@
+exports.inject = = function() {
+    var cssContent = {{ cssContent }};
+    var injectCssFn = {{ injectCssFn }};
+
+    injectCssFn(cssContent);
+}
+
+
