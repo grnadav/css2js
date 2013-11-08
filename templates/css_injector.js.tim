@@ -1,6 +1,17 @@
 (function (css) {
     var headEl = document.getElementsByTagName('head')[0];
     var styleEl = document.createElement('style');
-    styleEl.innerText = css;
     headEl.appendChild(styleEl);
+    
+    if (styleEl.styleSheet) {
+        if (!styleEl.styleSheet.disabled) {
+            styleEl.styleSheet.cssText = css;
+        }
+    } else {
+        try {
+            styleEl.innerHTML = css
+        } catch(e) {
+            styleEl.innerText = css;
+        }
+    }
 })
