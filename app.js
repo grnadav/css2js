@@ -4,7 +4,7 @@ var fs = require('fs'),
 
 
 if (require.main === module) {
-    // loaded from command line - require arguments
+    // loaded from command line - require arguments, if fails returns 1
     var argv = optimist
         .usage('Usage: $0 -css [path/to/input/css] -out [path/to/out/js] -template [vanilla_runner|requirejs_inject|requirejs_runner|<yours!>]')
         .demand(['css', 'out', 'template'])
@@ -26,20 +26,20 @@ if (require.main === module) {
 /**
  * Convert CSS file to Javascript output
  * @param {string} cssFileUri - path to css to convert, e.g. /my/awesome/all.css, or ../all.css
- * @param {string} outputFile - path to output JS file, e.g. /my/awesome/css.js, or ../css.js
  * @param {string} templatePath - [vanilla_runner|requirejs_inject|requirejs_runner|<yours (see readme)!>]
+ * @param {string} outputFile - path to output JS file, e.g. /my/awesome/css.js, or ../css.js
  * @returns {number} - 0 success, -1 missing css input file, -2 missing template file
  */
-function convert(cssFileUri, outputFile, templatePath) {
+function convert(cssFileUri, templatePath, outputFile) {
 
     // verify files exists
-    if (!fs.existsSync(cssFileUri)) {
+    if (!cssFileUri || !fs.existsSync(cssFileUri)) {
         console.error('Missing input css file:' + cssFileUri);
         return -1;
     }
-    if (!fs.existsSync(templatePath)) {
+    if (!templatePath || !fs.existsSync(templatePath)) {
         console.error('Missing input template file:' + templatePath);
-        return -1;
+        return -2;
     }
 
     // read the input css and build the output js files
