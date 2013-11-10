@@ -1,5 +1,4 @@
 var expect = require("expect.js"),
-    util = require("../util.js"),
     spawn = require('child_process').spawn;
 
 var css2js = __dirname + "/../../app.js",

@@ -1,5 +1,4 @@
 var expect = require("expect.js"),
-    util = require("../util.js"),
     css2js = require("../../app.js");
 
 var simpleCss = __dirname + "/../simple.css";
