@@ -14,7 +14,7 @@ describe("Test invalid parameter receiving behaviour", function() {
     });
 
     it("should alert missing input css file", function(done) {
-        var ret = spawn('node', [css2js, "nonExistent.css"]);
+        var ret = spawn('node', [css2js, "--css=nonExistent.css"]);
         ret.on('close', function (code) {
             expect(code).to.be(1);
             done();
@@ -22,7 +22,7 @@ describe("Test invalid parameter receiving behaviour", function() {
     });
 
     it("should alert missing template parameter", function(done) {
-        var ret = spawn('node', [css2js, simpleCss]);
+        var ret = spawn('node', [css2js, "--css="+simpleCss]);
         ret.on('close', function (code) {
             expect(code).to.be(1);
             done();
@@ -30,7 +30,7 @@ describe("Test invalid parameter receiving behaviour", function() {
     });
 
     it("should alert missing input template file", function(done) {
-        var ret = spawn('node', [css2js, simpleCss, "invalidTemplateName"]);
+        var ret = spawn('node', [css2js, "--css="+simpleCss, "--template=invalidTemplateName"]);
         ret.on('close', function (code) {
             expect(code).to.be(1);
             done();
