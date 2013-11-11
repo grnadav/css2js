@@ -1,4 +1,6 @@
 var fs = require('fs'),
+    path = require('path'),
+    rootPath = path.dirname(fs.realpathSync(__filename)),
     tinytim = require('tinytim'),
     optimist = require('optimist');
 
@@ -6,15 +8,15 @@ var fs = require('fs'),
 if (require.main === module) {
     // loaded from command line - require arguments, if fails returns 1
     var argv = optimist
-        .usage('Usage: $0 --css=[path/to/input/css] --out=[path/to/out/js] --template=[vanilla_runner|requirejs_inject|requirejs_runner|<yours!>]')
-        .demand(['css', 'out', 'template'])
-        .argv,
+            .usage('Usage: $0 --css=[path/to/input/css] --out=[path/to/out/js] --template=[vanilla_runner|requirejs_inject|requirejs_runner|<yours!>]')
+            .demand(['css', 'out', 'template'])
+            .argv,
 
 
         cssFileUri = argv.css,
         outputFile = argv.out,
         template = argv.template,
-        templatePath = 'templates/' + template + '.js.tim';
+        templatePath = path.join(rootPath, 'templates/' + template + '.js.tim');
 
     return convert(cssFileUri, templatePath, outputFile);
 
@@ -49,7 +51,8 @@ function convert(cssFileUri, templatePath, outputFile) {
     cssContent = "'" + cssContent + "'";
 
     // get the injection method so it is injectable to the other templates
-    var injectCssFn = tinytim.renderFile('templates/css_injector.js.tim', {});
+    var injectJsPath = path.join(rootPath, 'templates/css_injector.js.tim');
+    var injectCssFn = tinytim.renderFile(injectJsPath, {});
     // render the output template with the css content and the injection method
     var res = tinytim.renderFile(templatePath, {cssContent: cssContent, injectCssFn: injectCssFn});
 

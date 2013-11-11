@@ -1,6 +1,6 @@
 {
     "name": "css2js",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "private": false,
     "description": "Convert CSS to Javascript",
     "keywords": ["css", "js", "convert", "compile", "transpile"],
@@ -32,7 +32,7 @@
     },
     "main": "app.js",
     "bin": {
-        "css2js": "./bin/css2js"
+        "css2js": "./css2js"
     }
 
 }

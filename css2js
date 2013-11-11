@@ -20,7 +20,7 @@ if (require.main === module) {
         cssFileUri = argv.css,
         outputFile = argv.out,
         template = argv.template,
-        templatePath = 'templates/' + template + '.js.tim';
+        templatePath = path.join(rootPath, 'templates/' + template + '.js.tim');
 
     return css2js.convert(cssFileUri, templatePath, outputFile);
 
