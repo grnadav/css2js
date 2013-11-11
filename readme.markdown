@@ -5,9 +5,13 @@ Why would you want to convert your perfectly fine CSS into a Javascript file?
 1. If you want to create a project that output a single runnable file -  with no external dependencies, you can now embed your static resources in the CSS (or compile them there via SASS\LESS), convert that CSS into JS and compile it into your .min output
 2. Minimize network roundtrips
 
+## Install
+npm install css2js -g
+
 ## Example usage
 ### From command-line:
-node app.js --css=mycss.css --out=out.js --template=vanilla_runner
+css2js --css=mycss.css --out=out.js --template=vanilla_runner
+
 ### From node
 ````javascript
 #!/usr/bin/env node

@@ -1,6 +1,6 @@
 {
     "name": "css2js",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "private": false,
     "description": "Convert CSS to Javascript",
     "keywords": ["css", "js", "convert", "compile", "transpile"],
@@ -30,6 +30,9 @@
         "name": "Nadav Greenberg",
         "email": "grnadav@gmail.com"
     },
-    "main": "app.js"
+    "main": "app.js",
+    "bin": {
+        "css2js": "./bin/css2js"
+    }
 
 }
