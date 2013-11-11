@@ -6,7 +6,7 @@ var fs = require('fs'),
 if (require.main === module) {
     // loaded from command line - require arguments, if fails returns 1
     var argv = optimist
-        .usage('Usage: $0 -css [path/to/input/css] -out [path/to/out/js] -template [vanilla_runner|requirejs_inject|requirejs_runner|<yours!>]')
+        .usage('Usage: $0 --css=[path/to/input/css] --out=[path/to/out/js] --template=[vanilla_runner|requirejs_inject|requirejs_runner|<yours!>]')
         .demand(['css', 'out', 'template'])
         .argv,
 
@@ -16,7 +16,7 @@ if (require.main === module) {
         template = argv.template,
         templatePath = 'templates/' + template + '.js.tim';
 
-    return convert(cssFileUri, outputFile, templatePath);
+    return convert(cssFileUri, templatePath, outputFile);
 
 } else {
     // loaded from another module, export the functionality
