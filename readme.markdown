@@ -9,7 +9,6 @@ Why would you want to convert your perfectly fine CSS into a Javascript file?
 ### From command-line:
 node app.js --css=mycss.css --out=out.js --template=vanilla_runner
 ### From node
-Note: 0.1.0 changed the parameters order of convert()
 ````javascript
 #!/usr/bin/env node
 
