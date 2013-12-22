@@ -38,4 +38,5 @@ There are a couple of features I wish were here (via contribution say... ;) )
 3. ~~Tests - :(~~ (added 0.1.0)
 4. Grunt task for easier use with your Grunt projects
 
-
+## Whats new
+0.1.4 - bug fix - make it work on Windows OS as well, by also handling \r line breaks
