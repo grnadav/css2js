@@ -46,7 +46,7 @@ function convert(cssFileUri, templatePath, outputFile) {
 
     // read the input css and build the output js files
     var cssContent = fs.readFileSync(cssFileUri, {encoding: 'utf8'});
-    cssContent = cssContent.replace(/\n/g, " ");
+    cssContent = cssContent.replace(/[\n|\r]/g, " ");
     cssContent = cssContent.replace(/'/g, '\"');
     cssContent = "'" + cssContent + "'";
 
