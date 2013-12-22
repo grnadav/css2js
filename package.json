@@ -1,6 +1,6 @@
 {
     "name": "css2js",
-    "version": “0.1.4”,
+    "version": "0.1.4",
     "private": false,
     "description": "Convert CSS to Javascript",
     "keywords": ["css", "js", "convert", "compile", "transpile"],
